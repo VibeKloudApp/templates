@@ -1,32 +1,45 @@
 <template>
-  <main style="max-width: 720px; margin: 2rem auto; font-family: Arial">
-    <h1>Nuxt + Node.js Products</h1>
-    <form @submit.prevent="createProduct">
-      <input v-model="name" placeholder="Name" required />
-      <input v-model.number="price" type="number" placeholder="Price" required />
-      <button>Create</button>
-    </form>
-    <ul>
-      <li v-for="p in products" :key="p.id">{{ p.name }} - ${{ p.price }}</li>
-    </ul>
-  </main>
+  <section class="hiw-section" id="how-it-works">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="mx-auto">
+          <img src="/assets/img/vk-saas-illustration.svg" alt="Cloud deployment illustration" width="35%" />
+        </div>
+        <h2 class="section-title sr sr-d1">🚀 Congratulations! <br /> Your App is Live on your own Google Cloud</h2>
+        <p class="section-sub mx-auto mt-3 sr sr-d2">
+          Deployed successfully with automated infrastructure, CI/CD, and secure configuration.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-12"><div style="display:flex;align-items:stretch;flex-direction:column;"><div class="tag-pill mb-2"><span class="dot"></span>Google Cloud Native</div><div class="tag-pill mb-2"><span class="dot"></span>Automated Provisioning</div></div></div>
+        <div class="col-md-3 col-12"><div style="display:flex;align-items:stretch;flex-direction:column;"><div class="tag-pill mb-2"><span class="dot"></span>Runs fully on your GCP</div><div class="tag-pill mb-2"><span class="dot"></span>Secure IAM roles</div></div></div>
+        <div class="col-md-3 col-12"><div style="display:flex;align-items:stretch;flex-direction:column;"><div class="tag-pill mb-2"><span class="dot"></span>No manual setup required</div><div class="tag-pill mb-2"><span class="dot"></span>HTTPS endpoint with SSL</div></div></div>
+        <div class="col-md-3 col-12"><div style="display:flex;align-items:stretch;flex-direction:column;"><div class="tag-pill mb-2"><span class="dot"></span>Cloud Run service</div><div class="tag-pill mb-2"><span class="dot"></span>Secrets Managed</div></div></div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
-const products = ref([]);
-const name = ref('');
-const price = ref(0);
-
-const load = async () => {
-  products.value = await $fetch('/api/products');
-};
-
-const createProduct = async () => {
-  await $fetch('/api/products', { method: 'POST', body: { name: name.value, price: price.value } });
-  name.value = '';
-  price.value = 0;
-  await load();
-};
-
-await load();
+useHead({
+  title: 'VibeKloud — Hello World',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Launch your SaaS or AI startup in days with VibeKloud — a high-converting Framer template built for founders, creators, and lean agencies.'
+    }
+  ],
+  link: [
+    { rel: 'stylesheet', href: '/assets/css/vk.style.css' },
+    { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' },
+    { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css' },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap'
+    }
+  ],
+  script: [{ src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js', defer: true }]
+});
 </script>
