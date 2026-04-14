@@ -15,7 +15,7 @@ function App() {
       <div className="container">
         <div className="text-center mb-5">
           <div className="mx-auto">
-            <img src="/vk-saas-illustration.svg" alt="Cloud deployment illustration" width="50%" />
+            <img src="/vk-saas-illustration.svg" alt="Cloud deployment illustration" width="35%" />
           </div>
           <h2 className="section-title">
             🚀 Congratulations! <br /> Your App is Live on your own Google Cloud
