@@ -1,12 +1,12 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.get('/')
-def hello_world():
-    return 'Hello, World from Flask!\n'
+def home():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

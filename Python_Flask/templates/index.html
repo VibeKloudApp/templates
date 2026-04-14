@@ -9,7 +9,7 @@
       content="Launch your SaaS or AI startup in days with VibeKloud — a high-converting Framer template built for founders, creators, and lean agencies."
     />
 
-    <link rel="stylesheet" href="assets/css/vk.style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vk.style.css') }}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link
@@ -22,7 +22,7 @@
       <div class="container">
         <div class="text-center mb-5">
           <div class="mx-auto">
-            <img src="assets/img/vk-saas-illustration.svg" alt="Cloud deployment illustration" width="35%" />
+            <img src="{{ url_for('static', filename='assets/img/vk-saas-illustration.svg') }}" alt="Cloud deployment illustration" width="35%" />
           </div>
           <h2 class="section-title sr sr-d1">🚀 Congratulations! <br /> Your App is Live on your own Google Cloud</h2>
           <p class="section-sub mx-auto mt-3 sr sr-d2">
